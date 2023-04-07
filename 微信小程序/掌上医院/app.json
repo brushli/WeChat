@@ -1,0 +1,23 @@
+{
+    "pages": [
+      "pages/login/login",
+      "pages/home/home"
+    ],
+    "subpackages": [
+      
+    ],
+    "usingComponents": {
+      "t-demo": "./components/demo-block/index",
+      "t-button": "tdesign-miniprogram/button/button",
+      "t-icon": "tdesign-miniprogram/icon/icon"
+    },
+    "window": {
+      "backgroundTextStyle": "light",
+      "navigationBarBackgroundColor": "#f6f6f6",
+      "backgroundColor": "#f6f6f6",
+      "navigationBarTitleText": "掌上医院",
+      "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+  }
+  
