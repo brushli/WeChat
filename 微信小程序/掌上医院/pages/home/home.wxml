@@ -1,2 +1,6 @@
-<!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<view class="demo">
+  <view class="demo-title">Checkbox 多选框</view>
+  <view class="demo-desc">用于预设的一组选项中执行多项选择，并呈现选择结果。</view>
+  
+
+</view>

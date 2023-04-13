@@ -1,2 +1,14 @@
-<!--pages/login/login.wxml-->
-<text>pages/login/login.wxml</text>
+ <!--pages/login/login.wxml-->
+<!-- <view class="demo-title">掌上医院</view>
+<view class="demo-desc">登录的页面。</view> -->
+<view class="loginBox">
+    <t-image src="{{imageSrc}}" mode="heightFix" width="72" height="72" aria-label="医院图标"  />
+    <view class="demo-desc" style="margin-top: 50rpx;">申请获取你的微信</view>
+    <view class="loginUserAgree"> 
+        <t-checkbox value="checkbox1" label="同意" bind:change="onCheckAgreeCheckStateChanged"/>
+        <t-link theme="primary" hover="none" navigator-props="{{linkProtocol}}" disabled="{{checkAgree}}"  content="《用户协议》" />
+    </view>
+    <view class="loginButton">
+        <t-button theme="primary" icon="logo-wechat" content="微信用户快捷登录" shape="round" bindtap="onWeChatLoginlick"></t-button>
+    </view>
+</view>

@@ -1,17 +1,13 @@
-// pages/login/login.js
+// pages/user-protocol/userprotocol.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        imageSrc: 'https://tdesign.gtimg.com/miniprogram/images/image1.jpeg',        
-        linkProtocol:{
-            url:"/pages/user-protocol/userprotocol",
-            "hover-class":"none"
-        },
-        checkAgree:false
-    },    
+
+    },
+
     /**
      * 生命周期函数--监听页面加载
      */
@@ -67,22 +63,7 @@ Page({
     onShareAppMessage() {
 
     },
-    onWeChatLoginlick(e){
-        wx.navigateTo({
-            url: '/pages/home/home',
-            fail: () => {
-                wx.navigateTo({
-                    url: '/pages/home/navigateFail/navigateFail',
-                });
-            },
-        });
-    },
-
-    onCheckAgreeCheckStateChanged(event){
-        this.setData({
-            checkAgree:event.detail.checked
-        });
-       
-       console.log(this.data.checkAgree);
-    }    
+    onBack(){
+        wx.navigateBack();
+    }
 })

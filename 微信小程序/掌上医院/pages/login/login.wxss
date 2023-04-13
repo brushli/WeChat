@@ -1,1 +1,24 @@
 /* pages/login/login.wxss */
+.loginBox {
+    margin-top: 20%;
+    width: 100%;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+  }
+.loginUserAgree{
+    /* margin-top: 50%;
+    margin-top: 180rpx;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    text-align: center; */
+    background-color: transparent;
+    margin-top: 180rpx;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+  .loginButton {
+    margin-top: 5rpx;
+  }

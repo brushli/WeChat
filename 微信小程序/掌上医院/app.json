@@ -1,23 +1,27 @@
 {
     "pages": [
-      "pages/login/login",
-      "pages/home/home"
+        "pages/login/login",
+        "pages/home/home",
+        "pages/user-protocol/userprotocol"
     ],
-    "subpackages": [
-      
-    ],
+    "subpackages": [],
     "usingComponents": {
-      "t-demo": "./components/demo-block/index",
-      "t-button": "tdesign-miniprogram/button/button",
-      "t-icon": "tdesign-miniprogram/icon/icon"
+        "t-demo": "./components/demo-block/index",
+        "t-button": "tdesign-miniprogram/button/button",
+        "t-icon": "tdesign-miniprogram/icon/icon",
+        "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+        "t-radio": "tdesign-miniprogram/radio/radio",
+        "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group",
+        "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+        "t-link": "tdesign-miniprogram/link/link",
+        "t-image": "tdesign-miniprogram/image/image"
     },
     "window": {
-      "backgroundTextStyle": "light",
-      "navigationBarBackgroundColor": "#f6f6f6",
-      "backgroundColor": "#f6f6f6",
-      "navigationBarTitleText": "掌上医院",
-      "navigationBarTextStyle": "black"
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#f6f6f6",
+        "backgroundColor": "#f6f6f6",
+        "navigationBarTitleText": "掌上医院",
+        "navigationBarTextStyle": "black"
     },
     "sitemapLocation": "sitemap.json"
-  }
-  
+}

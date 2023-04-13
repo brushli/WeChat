@@ -1,1 +1,1 @@
-<t-fab icon="add" button-props="{{fabButton}}" bind:click="handleClick" text="获取手机号" />
+<t-fab button-props="{{fabButton}}" bind:click="handleClick" bind:getphonenumber="getPhoneNumber" text="获取手机号" />

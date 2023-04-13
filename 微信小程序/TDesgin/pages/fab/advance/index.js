@@ -9,5 +9,8 @@ Component({
     handleClick(e) {
       console.log(e);
     },
-  },
+    getPhoneNumber (e) {
+        console.log(e.detail.code)
+      }
+  }
 });
