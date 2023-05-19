@@ -77,6 +77,12 @@ let Calendar = class Calendar extends SuperComponent {
                     }
                 }
             },
+            format(v) {
+                this.base.format = v;
+                if (this.base && !this.data.usePopup) {
+                    this.calcMonths();
+                }
+            },
         };
         this.methods = {
             initialValue() {

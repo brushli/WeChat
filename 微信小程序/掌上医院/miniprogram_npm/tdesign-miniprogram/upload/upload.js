@@ -18,6 +18,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { isObject, SuperComponent, wxComponent } from '../common/src/index';
 import props from './props';
 import config from '../common/config';
+import { isOverSize } from '../common/utils';
 const { prefix } = config;
 const name = `${prefix}-upload`;
 let Upload = class Upload extends SuperComponent {
@@ -97,13 +98,17 @@ let Upload = class Upload extends SuperComponent {
                 }
             },
             chooseMedia(mediaType) {
-                const { config, sizeLimit, max } = this.data;
-                wx.chooseMedia(Object.assign(Object.assign({ count: max === 0 ? 9 : max, mediaType }, config), { success: (res) => {
+                const { config, sizeLimit, customLimit } = this.data;
+                wx.chooseMedia(Object.assign(Object.assign({ count: customLimit, mediaType }, config), { success: (res) => {
                         const files = [];
                         res.tempFiles.forEach((temp) => {
                             const { size, fileType, tempFilePath, width, height, duration, thumbTempFilePath } = temp, res = __rest(temp, ["size", "fileType", "tempFilePath", "width", "height", "duration", "thumbTempFilePath"]);
-                            if (sizeLimit && size > sizeLimit) {
-                                wx.showToast({ icon: 'none', title: `${fileType === 'image' ? '图片' : '视频'}大小超过限制` });
+                            if (isOverSize(size, sizeLimit)) {
+                                let title = `${fileType === 'image' ? '图片' : '视频'}大小超过限制`;
+                                if (typeof sizeLimit !== 'number') {
+                                    title = sizeLimit.message.replace('{sizeLimit}', sizeLimit === null || sizeLimit === void 0 ? void 0 : sizeLimit.size);
+                                }
+                                wx.showToast({ icon: 'none', title });
                                 return;
                             }
                             const name = this.getRandFileName(tempFilePath);
@@ -122,8 +127,12 @@ let Upload = class Upload extends SuperComponent {
                         const files = [];
                         res.tempFiles.forEach((temp) => {
                             const { size, type: fileType, path: tempFilePath } = temp, res = __rest(temp, ["size", "type", "path"]);
-                            if (sizeLimit && size > sizeLimit) {
-                                wx.showToast({ icon: 'none', title: `${fileType === 'image' ? '图片' : '视频'}大小超过限制` });
+                            if (isOverSize(size, sizeLimit)) {
+                                let title = `${fileType === 'image' ? '图片' : '视频'}大小超过限制`;
+                                if (typeof sizeLimit !== 'number') {
+                                    title = sizeLimit.message.replace('{sizeLimit}', sizeLimit === null || sizeLimit === void 0 ? void 0 : sizeLimit.size);
+                                }
+                                wx.showToast({ icon: 'none', title });
                                 return;
                             }
                             const name = this.getRandFileName(tempFilePath);
@@ -144,6 +153,7 @@ let Upload = class Upload extends SuperComponent {
     }
     onProofTap(e) {
         var _a;
+        this.onFileClick(e);
         const { index } = e.currentTarget.dataset;
         wx.previewImage({
             urls: this.data.customFiles.filter((file) => file.percent !== -1).map((file) => file.url),

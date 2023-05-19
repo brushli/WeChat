@@ -1,6 +1,39 @@
-<view class="demo">
-  <view class="demo-title">Checkbox 多选框</view>
-  <view class="demo-desc">用于预设的一组选项中执行多项选择，并呈现选择结果。</view>
-  
-
+<view class="homeMain">
+    <t-row>
+        <t-image src="{{hospitalLogo}}" width="100%" height="45" aria-label="医院logo" />
+    </t-row>
+    <t-row>
+        <t-link size="small" theme="primary" content="医院介绍" prefixIcon="file" hover />
+    </t-row>
+    <t-row>
+        <t-link size="small" theme="primary" content="重庆市沙坪坝区高滩岩正街30号" prefixIcon="location" hover />
+    </t-row>
+    <t-row>
+        <t-swiper height="136" style="margin-top: 10rpx;"
+            current="{{current}}"
+            autoplay="{{autoplay}}"
+            duration="{{duration}}"
+            interval="{{interval}}"
+            list="{{swiperList}}"
+            navigation="{{ { type: 'dots-bar' } }}"
+            />
+    </t-row>
+    <t-row>
+        <t-image src="{{hospitalLogo}}" width="100%" style="margin-top: 10rpx;" height="60" aria-label="操作指南" />
+    </t-row>
+    <t-row>
+        <t-notice-bar style="margin-top: 10rpx;"  height="300"
+        visible="{{true}}"
+        direction="vertical"
+        content="{{notice_content}}"
+        prefixIcon="sound"
+        bind:click="click"
+        ></t-notice-bar>
+    </t-row>
+    <t-tab-bar value="{{value}}" bindchange="onTabChange" theme="tag" split="{{false}}">
+    <t-tab-bar-item wx:for="{{list}}" wx:key="index" value="{{item.value}}" icon="{{item.icon}}">
+        {{item.label}}
+    </t-tab-bar-item>
+    </t-tab-bar>
 </view>
+<t-dialog id="t-dialog" content="" />

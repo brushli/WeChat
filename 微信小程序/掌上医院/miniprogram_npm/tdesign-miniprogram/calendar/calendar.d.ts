@@ -28,6 +28,7 @@ export default class Calendar extends SuperComponent {
         'firstDayOfWeek,minDate,maxDate'(firstDayOfWeek: any, minDate: any, maxDate: any): void;
         value(v: any): void;
         visible(v: any): void;
+        format(v: any): void;
     };
     methods: {
         initialValue(): void;

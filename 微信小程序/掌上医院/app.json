@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/login/login",
         "pages/home/home",
+        "pages/login/login",        
         "pages/user-protocol/userprotocol"
     ],
     "subpackages": [],
@@ -14,7 +14,10 @@
         "t-checkbox-group": "tdesign-miniprogram/checkbox-group/checkbox-group",
         "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
         "t-link": "tdesign-miniprogram/link/link",
-        "t-image": "tdesign-miniprogram/image/image"
+        "t-image": "tdesign-miniprogram/image/image",
+        "t-dialog": "tdesign-miniprogram/dialog/dialog",
+        "t-tab-bar": "tdesign-miniprogram/tab-bar/tab-bar",
+        "t-tab-bar-item": "tdesign-miniprogram/tab-bar-item/tab-bar-item"
     },
     "window": {
         "backgroundTextStyle": "light",

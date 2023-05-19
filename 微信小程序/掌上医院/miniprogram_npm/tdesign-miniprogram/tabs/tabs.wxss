@@ -165,6 +165,9 @@
   height: var(--td-tab-track-thickness, 6rpx);
   border-radius: var(--td-tab-track-radius, 8rpx);
 }
+.t-tabs__scroll::-webkit-scrollbar {
+  display: none;
+}
 .t-tabs__scroll--top,
 .t-tabs__scroll--bottom {
   height: var(--td-tab-item-height, 96rpx);
